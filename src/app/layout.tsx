@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ibonde News",
+  title: "ibondev News",
   description: "A daily news web app",
 };
 

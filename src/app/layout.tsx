@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_Bengali } from "next/font/google";
 import "./globals.css";
 import Navbar from "./shared/Navbar";
 import { Toast } from '@heroui/react';
+import NavLinks from "./shared/NavLinks";
+import Headlines from "./shared/Headlines";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const noto_sans_bengali = Noto_Sans_Bengali({
+  subsets: ["latin", "bengali"],
 });
 
 export const metadata: Metadata = {
@@ -23,10 +19,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${noto_sans_bengali.className} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Navbar />
+        <Navbar>
+          <NavLinks></NavLinks>
+          <Headlines></Headlines>
+        </Navbar>
         <Toast.Provider placement="top" className="mt-15"></Toast.Provider>
         {children}
       </body>

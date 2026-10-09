@@ -16,7 +16,7 @@ const Headlines = async () => {
                 <div className="bg-red-600 text-white text-lg px-5">
                     সর্বশেষ
                 </div>
-                <Marquee className="flex gap-6  text-white font-semibold">
+                <Marquee speed={120} className="flex gap-6  text-white font-semibold">
                     {
                         headlines.map(lines => (
                             <span className="hover:underline ml-2 text-lg cursor-pointer list-item list-disc list-inside" key={lines.id}>{lines.title}</span>
